@@ -1,4 +1,5 @@
-![Feature Distribution](https://github.com/user-attachments/assets/841097f2-0a28-4e2d-beef-f640db5b2c39)# Task-4 : Classification with Logistic Regression
+# Task-4 : Classification with Logistic Regression
+
 
 ##  Objective
 
