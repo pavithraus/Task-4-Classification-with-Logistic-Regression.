@@ -1,95 +1,108 @@
-# Task-4-Classification-with-Logistic-Regression.
+![Feature Distribution](https://github.com/user-attachments/assets/841097f2-0a28-4e2d-beef-f640db5b2c39)# Task-4 : Classification with Logistic Regression
 
-Task 4: Logistic Regression Classifier
-Objective
+##  Objective
+
 Build a binary classifier using Logistic Regression to predict whether a tumor is malignant or benign using diagnostic features. The task includes model training, evaluation, threshold tuning, and visualizing the underlying mechanics.
 
-Project Contents
-data.csv — Original dataset ( Breast Cancer Wisconsin ) used for this model
-logistic_classifier.py — Python script for all preprocessing + visualizations + Linear Regression
-Visual Images — Folder containing all visual plots
-README.md — This documentation
-Dataset
-Dataset: Breast Cancer Wisconsin
-Target Column: diagnosis
+---
 
-M → Malignant (1)
-B → Benign (0)
-Features: 30 numeric columns representing various measurements
-Tools Used
-Python
-pandas, numpy
-matplotlib, seaborn
-scikit-learn
-Workflow
-1. Load & Explore the Dataset
-Dropped irrelevant columns (id, unnamed)
-Converted diagnosis labels: M → 1, B → 0
-Verified no missing values
-Checked class distribution
-Visual 1: Class Distribution Bar Plot
-Shows data imbalance between benign and malignant cases
+##  Project Contents
 
-Class Distribution
+- `data.csv` — https://github.com/pavithraus/Task-4-Classification-with-Logistic-Regression./blob/main/Breast_cancer_wisconsin.csv
+- `logistic_classifier.py` — Python script for preprocessing, model training, evaluation, and visualizations
+- `Visual Outputs/` — Folder containing all visual plots
+- `README.md` — Project documentation
 
-2. Data Exploration
-Analyzed feature relationships using a heatmap
-Identified correlation patterns and potential redundancy
-Plotted histograms of key features
-Visual 2: Correlation Heatmap
-Visualizes feature interdependencies
+---
 
-Feature Correlation Matrix
+##  Dataset
 
-Visual 3: Feature Histograms
-Shows distributions of radius_mean, texture_mean, etc.
+- **Dataset**: Breast Cancer Wisconsin Diagnostic Dataset
+- **Target Column**: `diagnosis`
+  - `M` → Malignant (1)
+  - `B` → Benign (0)
 
-Feature Distribution
+---
 
-3. Preprocessing
-Split data into training (80%) and test (20%) sets
-Standardized features with StandardScaler
-Why scaling?
-It ensures features contribute equally and improves model convergence.
+## 🛠 Tools & Libraries
 
-4. Model Training
-Trained logistic regression model on scaled features
-Used default parameters for interpretability
-5. Model Evaluation
-Evaluated using confusion matrix, classification report, ROC curve
-AUC ≈ 0.99 indicates high separability
-Visual 4: ROC Curve with AUC Score
-Shows model performance across thresholds
+- **Python 3.x**
+- **Pandas** — Data manipulation and analysis
+- **NumPy** — Numerical computations
+- **Matplotlib & Seaborn** — Data visualization
+- **Scikit-learn** — Machine learning model building and evaluation
 
-ROC curve
+---
 
-6. Threshold Tuning
-Changed classification threshold from 0.5 → 0.6
-Reduced false positives, slightly affected recall
-Used predict_proba() to manually adjust threshold
-7. Sigmoid Function
-Plotted sigmoid function to demonstrate probability mapping
-Visual 5: Sigmoid Function Plot
-Shows how input is transformed into a probability (0–1)
+##  Workflow
 
-Sigmoid Function
+1. **Data Loading & Cleaning**
+   - Load the dataset from `data.csv`
+   - Drop unnecessary columns (e.g., ID columns)
+   - Encode categorical target variable (`diagnosis`) to numerical
 
-Interview Concepts
-Concept	Explanation
-Logistic vs Linear	Logistic → classification (probabilities), Linear → continuous output
-Sigmoid Function	Maps real input to (0, 1) — used for probability output
-Precision vs Recall	Precision = TP / (TP + FP), Recall = TP / (TP + FN)
-ROC-AUC	AUC shows overall model performance; closer to 1 is better
-Confusion Matrix	Table showing TP, TN, FP, FN
-Imbalanced Data	Accuracy may be misleading — prefer AUC, F1-score
-Threshold Tuning	Helps balance sensitivity and specificity
-Logistic for Multi-Class?	Yes, with One-vs-Rest or Softmax strategies
-Insights & Anomalies
-Radius and perimeter are highly correlated with malignancy
-Dataset is clean and balanced enough for model training
-A few outliers seen in area_worst and texture_worst
-Conclusion
-Successfully implemented a binary classifier using logistic regression
-Achieved high performance (AUC ~ 0.99) and demonstrated model interpretability
-Explored threshold tuning, feature scaling, and sigmoid behavior
-Covered all core interview topics for binary classification tasks
+2. **Exploratory Data Analysis (EDA)**
+   - Visualize class distribution
+   - Generate correlation heatmap
+   - Plot distributions of key features
+
+3. **Data Preprocessing**
+   - Split data into training and testing sets
+   - Standardize features using `StandardScaler`
+
+4. **Model Training**
+   - Train a Logistic Regression model on the training data
+
+5. **Model Evaluation**
+   - Predict on test data
+   - Evaluate using:
+     - Classification report (precision, recall, F1-score)
+     - Confusion matrix
+     - ROC curve and AUC score
+
+6. **Threshold Tuning**
+   - Adjust decision threshold (e.g., from 0.5 to 0.6)
+   - Observe changes in evaluation metrics
+
+7. **Sigmoid Function Visualization**
+   - Plot the sigmoid function to understand logistic regression behavior
+
+---
+
+##  Results
+
+- **Classification Report**: Provides precision, recall, F1-score for each class
+- **Confusion Matrix**: Shows true vs. predicted classifications
+- **ROC Curve**: Illustrates the trade-off between true positive rate and false positive rate
+- **AUC Score**: Measures the area under the ROC curve
+
+---
+
+##  Visual Outputs
+
+All visualizations generated during the workflow are saved in the `Visual Outputs/` directory, including:
+
+- Class distribution plot
+- ![class distribution](https://github.com/user-attachments/assets/278e433a-2d22-48f2-932d-b9e880f600c6)
+- Feature correlation heatmap
+- ![Feature correlation Heatmap](https://github.com/user-attachments/assets/840cfc58-325d-4117-9be6-8f9743cc9046)
+
+- Feature distribution histograms
+- ![Feature Distribution](https://github.com/user-attachments/assets/8564de2f-8d75-4c99-a56f-6b99b3f7304f)
+
+- ROC curve
+- ![ROC Curve](https://github.com/user-attachments/assets/dbe23552-3642-4c80-a0a6-f7aa40e5ba7b)
+
+- Sigmoid function plot
+- ![Sigmoid function](https://github.com/user-attachments/assets/640cf59e-b6c3-427c-b025-d121c7091a5c)
+
+
+---
+
+##  Conclusion
+
+This project demonstrates the application of Logistic Regression for binary classification tasks, emphasizing the importance of data preprocessing, model evaluation, and threshold tuning to optimize performance.
+
+---
+
+
